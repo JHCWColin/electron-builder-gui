@@ -1,0 +1,120 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f0e3;
+  --card: rgba(255, 251, 245, 0.9);
+  --line: rgba(91, 64, 33, 0.14);
+  --text: #2d2318;
+  --muted: #6e5c47;
+  --accent: #b55322;
+  --accent-strong: #833714;
+  --shadow: 0 24px 60px rgba(70, 44, 16, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(221, 171, 110, 0.36), transparent 28%),
+    linear-gradient(160deg, #faf5ec, var(--bg));
+}
+
+.page {
+  min-height: 100vh;
+  padding: 48px 24px 72px;
+}
+
+.hero,
+.card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  max-width: 980px;
+  margin: 0 auto 24px;
+  padding: 40px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-strong);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.summary {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.chips span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #fff6ef;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 28px;
+}
+
+.card p,
+.card li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+ul {
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 24px 16px 48px;
+  }
+
+  .hero,
+  .card {
+    padding: 24px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

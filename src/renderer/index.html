@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron Builder UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="eyebrow" id="brand-eyebrow"></p>
+          <h1>electron-builder-UI</h1>
+          <p class="summary" id="brand-summary"></p>
+        </div>
+
+        <section class="settings-card">
+          <div class="settings-head">
+            <h3 id="settings-title"></h3>
+            <p id="settings-summary"></p>
+          </div>
+
+          <label class="settings-field">
+            <span id="language-label"></span>
+            <select id="language-select">
+              <option value="zh-CN">简体中文</option>
+              <option value="zh-TW">繁體中文</option>
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+            </select>
+          </label>
+
+          <label class="settings-field">
+            <span id="theme-label"></span>
+            <select id="theme-select">
+              <option value="system"></option>
+              <option value="light"></option>
+              <option value="dark"></option>
+            </select>
+          </label>
+        </section>
+
+        <ol class="steps">
+          <li class="step-item active" data-step-marker="1">
+            <span>1</span>
+            <div>
+              <strong id="step-side-1-title"></strong>
+              <p id="step-side-1-desc"></p>
+            </div>
+          </li>
+          <li class="step-item" data-step-marker="2">
+            <span>2</span>
+            <div>
+              <strong id="step-side-2-title"></strong>
+              <p id="step-side-2-desc"></p>
+            </div>
+          </li>
+          <li class="step-item" data-step-marker="3">
+            <span>3</span>
+            <div>
+              <strong id="step-side-3-title"></strong>
+              <p id="step-side-3-desc"></p>
+            </div>
+          </li>
+        </ol>
+
+        <section class="platform-card" id="platform-card"></section>
+      </aside>
+
+      <main class="content">
+        <header class="hero">
+          <div>
+            <p class="eyebrow" id="hero-eyebrow"></p>
+            <h2 id="step-title"></h2>
+          </div>
+          <div class="hero-actions">
+            <button id="back-button" class="ghost-button" disabled></button>
+            <button id="next-button" class="primary-button" disabled></button>
+          </div>
+        </header>
+
+        <section class="panel active" data-step-panel="1">
+          <div class="panel-grid">
+            <section class="card">
+              <div class="card-head">
+                <h3 id="choose-dir-title"></h3>
+                <p id="choose-dir-desc"></p>
+              </div>
+              <button id="choose-directory-button" class="primary-button wide-button"></button>
+              <div id="selected-directory" class="path-box empty"></div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h3 id="scan-title"></h3>
+                <p id="scan-desc"></p>
+              </div>
+              <div id="project-kind" class="hint-box"></div>
+              <div id="scan-result" class="scan-box muted"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="panel" data-step-panel="2">
+          <form id="metadata-form" class="form-grid">
+            <section class="card form-section">
+              <div class="card-head">
+                <h3 id="meta-title"></h3>
+                <p id="meta-desc"></p>
+              </div>
+
+              <label>
+                <span id="label-name"></span>
+                <input id="field-name" name="name" type="text" required />
+              </label>
+              <label>
+                <span id="label-productName"></span>
+                <input id="field-productName" name="productName" type="text" required />
+              </label>
+              <label>
+                <span id="label-version"></span>
+                <input id="field-version" name="version" type="text" value="1.0.0" required />
+              </label>
+              <label>
+                <span id="label-description"></span>
+                <input id="field-description" name="description" type="text" />
+              </label>
+              <label>
+                <span id="label-authorName"></span>
+                <input id="field-authorName" name="authorName" type="text" />
+              </label>
+              <label>
+                <span id="label-authorEmail"></span>
+                <input id="field-authorEmail" name="authorEmail" type="email" />
+              </label>
+              <label>
+                <span id="label-license"></span>
+                <input id="field-license" name="license" type="text" value="MIT" />
+              </label>
+              <label>
+                <span id="label-homepage"></span>
+                <input id="field-homepage" name="homepage" type="url" />
+              </label>
+              <label>
+                <span id="label-appId"></span>
+                <input id="field-appId" name="appId" type="text" required />
+              </label>
+            </section>
+
+            <section class="card form-section">
+              <div class="card-head">
+                <h3 id="window-title"></h3>
+                <p id="window-desc"></p>
+              </div>
+
+              <div class="inline-grid">
+                <label>
+                  <span id="label-windowWidth"></span>
+                  <input name="windowWidth" type="number" value="1200" min="640" max="3840" />
+                </label>
+                <label>
+                  <span id="label-windowHeight"></span>
+                  <input name="windowHeight" type="number" value="800" min="480" max="2160" />
+                </label>
+              </div>
+
+              <label class="toggle-row">
+                <input name="showMenuBar" type="checkbox" />
+                <span id="label-showMenuBar"></span>
+              </label>
+
+              <label class="toggle-row">
+                <input name="contextIsolation" type="checkbox" checked />
+                <span id="label-contextIsolation"></span>
+              </label>
+
+              <div class="icon-picker">
+                <div>
+                  <span class="label-title" id="label-iconPath"></span>
+                  <p id="icon-path" class="path-box empty"></p>
+                </div>
+                <button type="button" id="choose-icon-button" class="secondary-button"></button>
+              </div>
+
+              <div class="hint-box" id="icon-hint"></div>
+
+              <div class="preview-actions">
+                <button type="button" id="generate-files-button" class="secondary-button"></button>
+              </div>
+            </section>
+          </form>
+        </section>
+
+        <section class="panel" data-step-panel="3">
+          <div class="panel-grid">
+            <section class="card">
+              <div class="card-head">
+                <h3 id="version-title"></h3>
+                <p id="version-desc"></p>
+              </div>
+              <div id="compatibility-box" class="compatibility-box"></div>
+              <div id="version-options" class="radio-list"></div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h3 id="build-title"></h3>
+                <p id="build-desc"></p>
+              </div>
+              <div id="build-summary" class="summary-box"></div>
+              <div class="build-actions">
+                <button id="build-button" class="primary-button"></button>
+                <button id="open-release-button" class="ghost-button" disabled></button>
+              </div>
+              <pre id="build-log" class="log-box"></pre>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
