@@ -5,7 +5,7 @@
   "main": "src/main/main.js",
   "author": {
     "name": "JHCWColin",
-    "email": "JHCWColin@users.noreply.github.com"
+    "email": "jhcwcolin@gmail.com"
   },
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,7 @@
     "linux": {
       "category": "Utility",
       "desktopName": "electron-builder-ui",
-      "maintainer": "JHCWColin <JHCWColin@users.noreply.github.com>",
+      "maintainer": "JHCWColin <jhcwcolin@gmail.com>",
       "icon": "logo.png",
       "synopsis": "Desktop wizard for packaging frontend projects as Electron apps"
     }
