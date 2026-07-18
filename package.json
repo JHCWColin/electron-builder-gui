@@ -3,11 +3,25 @@
   "version": "0.1.0",
   "description": "面向初学者的 Electron 打包向导",
   "main": "src/main/main.js",
-  "author": "OpenAI Codex",
+  "author": {
+    "name": "JHCWColin",
+    "email": "JHCWColin@users.noreply.github.com"
+  },
   "license": "MIT",
   "scripts": {
     "start": "electron .",
     "dev": "electron ."
+  },
+  "build": {
+    "appId": "com.jhcwcolin.electronbuilderui",
+    "productName": "electron-builder-ui",
+    "linux": {
+      "category": "Utility",
+      "desktopName": "electron-builder-ui",
+      "maintainer": "JHCWColin <JHCWColin@users.noreply.github.com>",
+      "icon": "logo.png",
+      "synopsis": "Desktop wizard for packaging frontend projects as Electron apps"
+    }
   },
   "devDependencies": {
     "electron": "^43.1.1",
