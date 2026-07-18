@@ -1,6 +1,14 @@
-# electron-builder-gui
+<p align="center">
+  <img src="./logo.png" alt="electron-builder-ui logo" width="180" />
+</p>
 
-`electron-builder-gui` is a desktop wizard for turning a static HTML project or a simple frontend project into an Electron app package.
+# electron-builder-ui
+
+`electron-builder-ui` is a desktop wizard for turning a static HTML project or a simple frontend project into an Electron app package.
+
+## Demo
+
+![electron-builder-ui demo](./demo.png)
 
 It provides a visual flow for:
 
@@ -66,6 +74,17 @@ Start the app:
 ```bash
 npm start
 ```
+
+## GitHub release workflow
+
+Pushing a tag like `V0.1.0` triggers the GitHub Actions workflow in `.github/workflows/electron-build.yaml`.
+
+The workflow:
+
+- installs dependencies with `npm ci`
+- syncs `package.json` version from the Git tag
+- builds Electron packages for Windows, macOS, and Linux
+- uploads the generated installers and archives to the matching GitHub Release
 
 ## How packaging works
 
