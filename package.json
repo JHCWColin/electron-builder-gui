@@ -1,8 +1,9 @@
 {
   "name": "electron-builder-ui",
   "version": "0.1.0",
-  "description": "面向初学者的 Electron 打包向导",
+  "description": "Desktop wizard for packaging frontend projects as Electron apps",
   "main": "src/main/main.js",
+  "desktopName": "electron-builder-ui.desktop",
   "author": {
     "name": "JHCWColin",
     "email": "jhcwcolin@gmail.com"
@@ -17,9 +18,9 @@
     "productName": "electron-builder-ui",
     "linux": {
       "category": "Utility",
-      "desktopName": "electron-builder-ui",
       "maintainer": "JHCWColin <jhcwcolin@gmail.com>",
       "icon": "logo.png",
+      "syncDesktopName": true,
       "synopsis": "Desktop wizard for packaging frontend projects as Electron apps"
     }
   },
